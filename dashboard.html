@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillBridge — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <!-- Chart.js for radar chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">⚡ SkillBridge</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Analyze</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" class="btn btn-primary"
+         style="padding:8px 18px;font-size:13px;">Login</a>
+    </nav>
+  </header>
+
+  <section class="dashboard-section">
+    <div class="container">
+
+      <!-- WELCOME HEADER -->
+      <div class="dashboard-header">
+        <div>
+          <h1 class="section-title" id="welcome-msg">Welcome back! 👋</h1>
+          <p class="section-sub" id="role-msg">
+            Your skill progress at a glance
+          </p>
+        </div>
+        <a href="upload.html" class="btn btn-primary">
+          + New Analysis
+        </a>
+      </div>
+
+      <!-- STAT CARDS ROW -->
+      <div class="dash-stats">
+        <div class="dash-stat-card card">
+          <div class="dash-stat-icon">🎯</div>
+          <div class="dash-stat-info">
+            <p class="dash-stat-label">Match Score</p>
+            <h3 class="dash-stat-value" id="stat-score">—</h3>
+          </div>
+        </div>
+        <div class="dash-stat-card card">
+          <div class="dash-stat-icon">✅</div>
+          <div class="dash-stat-info">
+            <p class="dash-stat-label">Skills Matched</p>
+            <h3 class="dash-stat-value" id="stat-matched">—</h3>
+          </div>
+        </div>
+        <div class="dash-stat-card card">
+          <div class="dash-stat-icon">📚</div>
+          <div class="dash-stat-info">
+            <p class="dash-stat-label">Skills to Learn</p>
+            <h3 class="dash-stat-value" id="stat-missing">—</h3>
+          </div>
+        </div>
+        <div class="dash-stat-card card">
+          <div class="dash-stat-icon">🏆</div>
+          <div class="dash-stat-info">
+            <p class="dash-stat-label">Target Role</p>
+            <h3 class="dash-stat-value" id="stat-role">—</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN GRID -->
+      <div class="dash-grid">
+
+        <!-- RADAR CHART -->
+        <div class="card">
+          <h3 style="margin-bottom:20px;">📡 Skill Radar Chart</h3>
+          <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">
+            Green = you have it &nbsp;|&nbsp; Red = you need it
+          </p>
+          <div style="position:relative;height:300px;">
+            <canvas id="radarChart"></canvas>
+          </div>
+        </div>
+
+        <!-- SKILL CHECKLIST -->
+        <div class="card">
+          <h3 style="margin-bottom:20px;">📋 Skill Checklist</h3>
+          <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">
+            Track what you've completed
+          </p>
+          <div id="skill-checklist"></div>
+        </div>
+
+      </div>
+
+      <!-- OVERALL PROGRESS BAR -->
+      <div class="card" style="margin-top:24px;">
+        <div style="display:flex;justify-content:space-between;
+                    align-items:center;margin-bottom:12px;">
+          <h3>Overall Job Readiness</h3>
+          <span id="readiness-pct"
+                style="font-size:22px;font-weight:800;color:var(--primary)">
+            0%
+          </span>
+        </div>
+        <div class="progress-bar" style="height:16px;">
+          <div class="progress-fill" id="readiness-bar" style="width:0%"></div>
+        </div>
+        <p style="color:var(--muted);font-size:13px;margin-top:10px;"
+           id="readiness-msg">
+          Complete the recommended courses to improve your score
+        </p>
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <div class="dash-actions">
+        <h3 style="margin-bottom:20px;">⚡ Quick Actions</h3>
+        <div class="actions-grid">
+          <a href="upload.html" class="action-card">
+            <span class="action-icon">📄</span>
+            <span class="action-label">New Analysis</span>
+          </a>
+          <a href="analysis.html" class="action-card">
+            <span class="action-icon">📊</span>
+            <span class="action-label">View Results</span>
+          </a>
+          <a href="recommendations.html" class="action-card">
+            <span class="action-icon">📚</span>
+            <span class="action-label">My Courses</span>
+          </a>
+          <a href="index.html" class="action-card">
+            <span class="action-icon">🏠</span>
+            <span class="action-label">Home</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

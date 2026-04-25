@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+.env
+.env.local
+__pycache__/
+*.pyc
+venv/
+*.db
+*.sqlite
+backend/uploads/*
+!backend/uploads/.gitkeep
+*.log

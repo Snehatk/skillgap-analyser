@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillBridge — AI Skill Gap Analyzer</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">⚡ SkillBridge</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Analyze</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" class="btn btn-primary" style="padding:8px 18px;font-size:13px;">Login</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">🤖 AI-Powered Career Tool</div>
+      <h1 class="hero-title">
+        Find Your <span class="highlight">Skill Gaps</span><br/>
+        Land Your Dream Jobs
+      </h1>
+      <p class="hero-sub">
+        Upload your resume, pick a job role, and our AI instantly tells you
+        exactly what skills you're missing — with a personalized learning roadmap.
+      </p>
+      <div class="hero-btns">
+        <a href="upload.html" class="btn btn-primary">Analyze My Skills →</a>
+        <a href="#features" class="btn btn-outline">See How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center;">How It Works</h2>
+      <p class="section-sub" style="text-align:center;">3 simple steps to your personalized skill roadmap</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📄</div>
+          <h3>Upload Resume</h3>
+          <p>Our AI reads your resume and automatically extracts all your current skills using NLP.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Pick a Job Role</h3>
+          <p>Choose your target role — Data Scientist, Web Developer, AI Engineer and more.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Get Your Roadmap</h3>
+          <p>Instantly see missing skills and get recommended courses, projects and certifications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Job Roles Covered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Skills in Database</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">AI</div>
+          <div class="stat-label">Powered Analysis</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">Free</div>
+          <div class="stat-label">Always Free to Use</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to close your skill gaps?</h2>
+      <p>Upload your resume and get your personalized roadmap in seconds.</p>
+      <a href="upload.html" class="btn btn-primary">Get Started Free →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>⚡ SkillBridge — AI Skill Gap Analyzer &nbsp;|&nbsp; Built as a Final Year Project</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  // Wake up backend when home page loads
+  fetch('https://skillbridge-backend-xvgy.onrender.com/')
+    .catch(() => console.log('Backend waking up...'));
+</script>
+</body>
+</html>

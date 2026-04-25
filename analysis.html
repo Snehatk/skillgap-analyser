@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillBridge — Skill Gap Analysis</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">⚡ SkillBridge</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Analyze</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" class="btn btn-primary" style="padding:8px 18px;font-size:13px;">Login</a>
+    </nav>
+  </header>
+
+  <section class="analysis-section">
+    <div class="container">
+
+      <!-- HEADER -->
+      <div style="text-align:center; margin-bottom:48px;">
+        <h1 class="section-title">Your Skill Gap Report 📊</h1>
+        <p class="section-sub" id="role-subtitle">Analyzing your skills...</p>
+      </div>
+
+      <!-- SCORE CARD -->
+      <div class="score-section">
+        <div class="score-card card">
+          <p class="score-label">Overall Match Score</p>
+          <div class="score-circle" id="score-circle">
+            <span id="score-number">0%</span>
+          </div>
+          <p class="score-desc" id="score-desc">Calculating...</p>
+        </div>
+
+        <div class="score-breakdown card">
+          <h3 style="margin-bottom:20px;">Skills Breakdown</h3>
+
+          <div class="breakdown-item">
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+              <span style="font-size:14px;">✅ Skills You Have</span>
+              <span class="tag tag-green" id="matched-count">0</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="matched-bar" style="width:0%;background:var(--success)"></div>
+            </div>
+          </div>
+
+          <div class="breakdown-item" style="margin-top:20px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+              <span style="font-size:14px;">❌ Skills You Need</span>
+              <span class="tag tag-red" id="missing-count">0</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="missing-bar" style="width:0%;background:var(--danger)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS GRID -->
+      <div class="skills-grid">
+
+        <!-- MATCHED SKILLS -->
+        <div class="card">
+          <h3 class="skills-card-title">
+            ✅ Skills You Already Have
+          </h3>
+          <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">
+            Great job! Keep these sharp.
+          </p>
+          <div id="matched-skills"></div>
+        </div>
+
+        <!-- MISSING SKILLS -->
+        <div class="card">
+          <h3 class="skills-card-title">
+            ❌ Skills You Need to Learn
+          </h3>
+          <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">
+            Focus on these to land the role.
+          </p>
+          <div id="missing-skills"></div>
+        </div>
+
+      </div>
+
+      <!-- CAREER MATCH SECTION -->
+      <div class="card" style="margin-top:24px;">
+        <h3 style="margin-bottom:20px;">🎯 Career Role Matches</h3>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">
+          Based on your current skills, here's how well you match other roles too:
+        </p>
+        <div id="career-matches"></div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div style="text-align:center;margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="recommendations.html" class="btn btn-primary">
+          📚 View Learning Recommendations →
+        </a>
+        <a href="upload.html" class="btn btn-outline">
+          🔄 Analyze Again
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/analysis.js"></script>
+</body>
+</html>

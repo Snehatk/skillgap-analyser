@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillBridge — Recommendations</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">⚡ SkillBridge</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Analyze</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" class="btn btn-primary"
+         style="padding:8px 18px;font-size:13px;">Login</a>
+    </nav>
+  </header>
+
+  <section class="recommendations-section">
+    <div class="container">
+
+      <!-- HEADER -->
+      <div style="text-align:center;margin-bottom:48px;">
+        <h1 class="section-title">Your Learning Roadmap 📚</h1>
+        <p class="section-sub">
+          Personalized courses and resources for every skill you need
+        </p>
+      </div>
+
+      <!-- MATCH SCORE BANNER -->
+      <div class="score-banner card" id="score-banner">
+        <div class="score-banner-left">
+          <p class="score-banner-label">Your current match score</p>
+          <h2 class="score-banner-number" id="banner-score">—</h2>
+        </div>
+        <div class="score-banner-right">
+          <p style="color:var(--muted);font-size:14px;">
+            Complete all recommended courses below to reach <strong
+            style="color:var(--success)">100% match</strong>
+          </p>
+          <a href="analysis.html" class="btn btn-outline"
+             style="margin-top:12px;padding:8px 20px;font-size:13px;">
+            ← Back to Analysis
+          </a>
+        </div>
+      </div>
+
+      <!-- NO MISSING SKILLS STATE -->
+      <div class="card hidden" id="no-gaps" style="text-align:center;padding:60px;">
+        <div style="font-size:56px;margin-bottom:16px;">🎉</div>
+        <h3 style="font-size:22px;margin-bottom:8px;">
+          You have all required skills!
+        </h3>
+        <p style="color:var(--muted);">
+          No skill gaps found. Consider exploring advanced topics.
+        </p>
+      </div>
+
+      <!-- RECOMMENDATIONS LIST -->
+      <div id="recommendations-list"></div>
+
+      <!-- LEARNING PATH SUMMARY -->
+      <div class="card" id="learning-summary" style="margin-top:24px;">
+        <h3 style="margin-bottom:20px;">🗺️ Suggested Learning Order</h3>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:20px;">
+          Follow this sequence for the fastest path to job-readiness:
+        </p>
+        <div id="learning-path"></div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div style="text-align:center;margin-top:40px;display:flex;
+                  gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="dashboard.html" class="btn btn-primary">
+          📊 View My Dashboard →
+        </a>
+        <a href="upload.html" class="btn btn-outline">
+          🔄 Start New Analysis
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/recommendations.js"></script>
+</body>
+</html>

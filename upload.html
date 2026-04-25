@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillBridge — Upload Resume</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">⚡ SkillBridge</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Analyze</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" class="btn btn-primary" style="padding:8px 18px;font-size:13px;">Login</a>
+    </nav>
+  </header>
+
+  <section class="upload-section">
+    <div class="container">
+
+      <div style="text-align:center; margin-bottom:48px;">
+        <h1 class="section-title">Analyze Your Skills 🎯</h1>
+        <p class="section-sub">Upload your resume and select a job role to get started</p>
+      </div>
+
+      <div class="upload-grid">
+
+        <!-- STEP 1: UPLOAD RESUME -->
+        <div class="card">
+          <div class="step-badge">Step 1</div>
+          <h3 class="step-title">Upload Your Resume</h3>
+          <p class="step-sub">PDF or DOC format supported</p>
+
+          <!-- DROP ZONE -->
+          <div class="drop-zone" id="drop-zone"
+               onclick="document.getElementById('resume-input').click()"
+               ondragover="handleDragOver(event)"
+               ondragleave="handleDragLeave(event)"
+               ondrop="handleDrop(event)">
+            <div class="drop-icon">📄</div>
+            <p class="drop-text">Click to upload or drag & drop</p>
+            <p class="drop-sub">PDF, DOC, DOCX up to 5MB</p>
+            <input type="file" id="resume-input" accept=".pdf,.doc,.docx"
+                   style="display:none" onchange="handleFileSelect(event)"/>
+          </div>
+
+          <!-- FILE SELECTED STATE -->
+          <div class="file-selected hidden" id="file-selected">
+            <div class="file-info">
+              <span class="file-icon">📎</span>
+              <span class="file-name" id="file-name">resume.pdf</span>
+              <button class="remove-file" onclick="removeFile()">✕</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: SELECT JOB ROLE -->
+        <div class="card">
+          <div class="step-badge">Step 2</div>
+          <h3 class="step-title">Select Target Job Role</h3>
+          <p class="step-sub">Choose the role you want to apply for</p>
+
+          <div class="form-group" style="margin-top:24px;">
+            <label>Job Role</label>
+            <select id="job-role">
+              <option value="">-- Select a role --</option>
+              <option value="data-scientist">Data Scientist</option>
+              <option value="web-developer">Web Developer</option>
+              <option value="ai-engineer">AI / ML Engineer</option>
+              <option value="cloud-engineer">Cloud Engineer</option>
+              <option value="data-analyst">Data Analyst</option>
+              <option value="devops-engineer">DevOps Engineer</option>
+              <option value="cybersecurity">Cybersecurity Analyst</option>
+            </select>
+          </div>
+
+          <!-- ROLE PREVIEW CARDS -->
+          <div class="role-preview hidden" id="role-preview">
+            <p style="font-size:13px; color:var(--muted); margin-bottom:10px;">
+              Required skills for this role:
+            </p>
+            <div id="required-skills-preview"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- STEP 3: MANUAL SKILLS (optional) -->
+      <div class="card" style="margin-top:24px;">
+        <div class="step-badge">Step 3 (Optional)</div>
+        <h3 class="step-title">Add Skills Manually</h3>
+        <p class="step-sub">Don't have a resume? Type your skills directly</p>
+
+        <div class="skills-input-area">
+          <div style="display:flex; gap:12px;">
+            <input type="text" id="skill-input"
+                   placeholder="Type a skill e.g. Python, SQL, React..."
+                   onkeypress="handleSkillKeypress(event)"/>
+            <button class="btn btn-outline" onclick="addSkill()">Add</button>
+          </div>
+          <div class="tags-container" id="skills-tags" style="margin-top:16px;"></div>
+        </div>
+      </div>
+
+      <!-- ANALYZE BUTTON -->
+      <div style="text-align:center; margin-top:40px;">
+        <button class="btn btn-primary analyze-btn" onclick="startAnalysis()">
+          🔍 Analyze My Skill Gap
+        </button>
+        <p style="color:var(--muted); font-size:13px; margin-top:12px;">
+          Results will appear instantly on the next page
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/upload.js"></script>
+</body>
+</html>

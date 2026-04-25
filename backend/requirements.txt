@@ -1,0 +1,7 @@
+flask==2.3.3
+flask-cors==4.0.0
+pymupdf==1.23.8
+spacy==3.7.2
+werkzeug==2.3.7
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+gunicorn==21.2.0
