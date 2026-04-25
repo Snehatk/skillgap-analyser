@@ -1,6 +1,7 @@
 from flask import Flask, app, request, jsonify
 from flask_cors import CORS
 import os
+from flask import send_from_directory
 
 from skill_extractor import extract_skills_from_resume, extract_skills
 from analyzer        import analyze_gap, get_all_career_matches
@@ -119,9 +120,13 @@ def save_progress_route():
 def test_db():
     result = save_user("TestUser", "test@test.com", "123456")
     return jsonify(result)
+@app.route('/<path:path>')
+def serve_static(path):
+    return send_from_directory(os.path.join(os.getcwd(), '..'), path)
 
 # ===== RUN SERVER =====
 if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=False, port=port, host="0.0.0.0")
+    
