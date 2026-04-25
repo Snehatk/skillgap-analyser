@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skillgap-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: skillgap
+  template:
+    metadata:
+      labels:
+        app: skillgap
+    spec:
+      containers:
+      - name: skillgap
+        image: snehatk12/skillgap-app
+        ports:
+        - containerPort: 5000
